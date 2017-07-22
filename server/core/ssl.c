@@ -196,8 +196,10 @@ const char* ssl_method_type_to_string(ssl_method_type_t method_type)
 {
     switch (method_type)
     {
+#ifndef OPENSSL_1_1
     case SERVICE_TLS10:
         return "TLS10";
+#endif
 #ifdef OPENSSL_1_0
     case SERVICE_TLS11:
         return "TLS11";
